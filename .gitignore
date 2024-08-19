@@ -1,0 +1,36 @@
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm/
+
+.vercel
+
+# Environment variables file
+https://github.com/triple-pixels/LovePhoria_Dashboard/pulls.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Production build directory
+dist/
+
+# dotenv environment variables file
+.env
+
+# IDE files
+*.iml
