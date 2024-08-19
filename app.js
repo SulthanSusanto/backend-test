@@ -1,9 +1,11 @@
 import Lead from './source/models/Lead.js';
+import cors from cors
 
 export default (express) => {
   const app = express();
 
   app.use(express.json());
+  app.use(cors())
 
   app.get('/', (req, res) => {
     res.send('welcome to the world');
