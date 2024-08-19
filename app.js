@@ -1,4 +1,4 @@
-import Lead from './source/models/Lead';
+import Lead from './source/models/Lead.js';
 
 export default (express) => {
   const app = express();
