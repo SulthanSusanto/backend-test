@@ -1,11 +1,12 @@
 import Lead from './source/models/Lead.js';
-import cors from cors
+
+import mongoose from 'mongoose';
 
 export default (express) => {
   const app = express();
 
   app.use(express.json());
-  app.use(cors())
+  // app.use(cors());
 
   app.get('/', (req, res) => {
     res.send('welcome to the world');
@@ -13,7 +14,7 @@ export default (express) => {
 
   app.get('/test', async (req, res) => {
     try {
-      const leadData = await Lead.findAll();
+      const leadData = await Lead.find();
       res.json({ data: leadData });
     } catch (err) {
       res.json({ message: 'error to get the data' });

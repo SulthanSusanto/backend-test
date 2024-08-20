@@ -1,16 +1,18 @@
 import express from 'express';
 import app from './app.js';
-import sequelize from './source/config/db.js';
+import mongoose from 'mongoose';
+// import sequelize from './source/config/db.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-sequelize
-  .sync()
-  .then(() => {
-    console.log('Database & tables synced');
+const mongoURI = process.env.MONGO_URI || 'your-mongodb-connection-string-here';
+mongoose
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
-  .catch((error) => {
-    console.error('Error syncing database:', error);
-  });
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+
 app(express);
