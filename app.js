@@ -14,7 +14,7 @@ export default (express) => {
 
   app.get('/test', async (req, res) => {
     try {
-      const leadData = await Lead.find();
+      const leadData = await Lead.findAll();
       res.json({ data: leadData });
     } catch (err) {
       res.json({ message: 'error to get the data' });
